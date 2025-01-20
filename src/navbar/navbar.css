@@ -11,7 +11,45 @@
 
 .navLeft, .navRight {
     flex: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3%;
 }
+
+.navIcon {
+    font-size: 20px;
+    margin-right: 10px;
+    color: bisque;
+    cursor: pointer;
+}
+
+.navImg {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.navList {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    gap: 5%;
+}
+
+.navListItem {
+    font-size: 18px;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+.searchIcon {
+    font-size: 18px;
+    color: bisque;
+}
+
 
 .navCenter {
     flex: 6;
