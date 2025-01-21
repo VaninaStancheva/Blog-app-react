@@ -3,7 +3,8 @@ import './post.css'
 export default function Post() {
     return (
         <div className="post-container">
-            <h3 className="post-title">Post title</h3>
+            <img className="post-image" src="" alt="post-image" />
+            <h5 className="post-title">Post title</h5>
             <p className="post-text">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda
                 officia architecto deserunt deleniti? Labore ipsum aspernatur magnam
