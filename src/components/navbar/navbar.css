@@ -50,6 +50,17 @@
     color: bisque;
 }
 
+.input-search {
+    border-radius: 8px;
+    height: 20px;
+    width: 11rem;
+    border-width: 1px;
+    border-color: antiquewhite;
+    background-color: antiquewhite;
+    font-family: "Josefin Sans", serif;
+    text-indent: .5rem;
+}
+
 
 .navCenter {
     flex: 6;
