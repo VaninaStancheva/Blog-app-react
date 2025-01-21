@@ -5,16 +5,23 @@
     flex-direction: column;
 }
 
-.post-title {
-    font-family: "Josefin Sans", Arial, Helvetica, sans-serif;
+.postTitle {
+    font-family: "Josefin Sans", sans-serif;
     font-size: 24px;
     font-weight: normal;
     margin-top: 30px;
+    margin-bottom: 5px;
     cursor: pointer;
+    border-bottom: #444444 solid 1px;
+    color: #444;
 }
 
-.post-text {
-    font-family: "Varela Round", Arial, Helvetica, sans-serif;
+.postDate {
+    color: darkgrey;
+}
+
+.postText {
+    font-family: "Varela Round", sans-serif;
     font-weight: 400;
     font-size: 14px;
     line-height: 24px;
