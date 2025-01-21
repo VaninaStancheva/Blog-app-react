@@ -1,0 +1,65 @@
+.singlePost {
+    flex: 9;
+}
+
+.singlePost-container {
+    padding: 20px;
+    padding-right: 0;
+}
+
+.singlePostImg {
+
+}
+
+.singlePostTitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+    font-size: 28px;
+    font-family: "Josefin Sans", sans-serif;
+    color: #444444;
+}
+
+.singlePostEdit-container {
+    font-size: 20px;
+}
+
+.singlePostIcon {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.singlePostIcon:first-child {
+    color: teal;
+}
+.singlePostIcon:last-child {
+    color: #bf5b49;
+}
+
+.singlePostInfo {
+    margin-left: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #be9656;
+    font-family: "Varela Round", sans-serif;
+}
+
+.singlePostAuthor{
+    margin-left: 5px;
+}
+
+.singlePostText {
+    color: #666;
+    font-size: 18px;
+    line-height: 25px;
+    text-align: justify;
+    font-family: "Varela Round", sans-serif;
+    padding-right: 1rem;
+}
+
+.singlePostText::first-letter {
+    margin-left: 20px;
+    font-size: 30px;
+    font-weight: 600;
+}

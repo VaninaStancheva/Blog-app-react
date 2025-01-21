@@ -5,7 +5,7 @@ export default function NavBar (){
         <div className="navbar">
             <div className="navLeft">
                 <i className="searchIcon fa-solid fa-magnifying-glass"></i>
-                <input className="input-search" type="text" placeholder="Search" />
+                <input className="searchInput" type="text" placeholder="Search" />
             </div>
             <div className="navCenter">
                 <ul className="navList">
