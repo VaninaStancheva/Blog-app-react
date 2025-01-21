@@ -1,4 +1,4 @@
 .posts {
     margin-top: 5rem;
-    display: flex;
+    display: grid;
 }
