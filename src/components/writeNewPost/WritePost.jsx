@@ -1,27 +1,66 @@
 import './writePost.css'
+import {useState, useEffect} from 'react'
 
 export default function WritePost() {
+//     const [title, setTitle] = useState('');
+//     const [description, setDescription] = useState('');
+//
+//     useEffect(() => {
+//             let postData = {
+//                 title: title,
+//                 description: description,
+//             }
+//             localStorage.setItem('postData', JSON.stringify(postData));
+//             alert('Data recorded successfully.');
+//             window.location.reload();
+//         }, [title, description]);
+
+
     return (
-        <div className="writePost">
             <form className="writePostForm">
-                <div className="title-container">
-                    <label htmlFor="title" className="labelTitle">Title</label>
-                    <input className="inputTitle" type="text" name="title" id="inputTitle" placeholder="Enter Title"/>
+                <div className="container">
+                    <label htmlFor="title" className="label" id="titlePost">Title</label>
+                    <input className="input" type="text"
+                           name="title"
+                           id="inputTitle"
+                           placeholder="Title"
+                           autoFocus={true}
+                        //onChange={(e) => setTitle(e.target.value)}
+                        //value={title}
+                    />
+                    <label htmlFor="fileInput" >
+                        <i className="addPhotoIcon fa-solid fa-camera"></i>
+                    </label>
+                    <input id="fileInput"
+                           type="file"
+                           style={{display: "none"}}
+                           className="input"
+                    />
                 </div>
-                <div className="category-container">
-                    <label htmlFor="category" className="labelCategory">Choose category:</label>
-                    <slect name="category" id="selectCategory" defaultValue="Angular">
+                <div className="container">
+                    <label htmlFor="category" className="label">Choose category:</label>
+                    <select name="category" id="selectCategory" className="input" defaultValue="Angular">
                         <option value="Angular">Angular</option>
                         <option value="Javascript">Javascript</option>
                         <option value="CSS">CSS</option>
-                    </slect>
+                    </select>
                 </div>
-                <div className="description-container">
-                    <label htmlFor="description" className="labelDescription">Your thoughts</label>
-                    <input className="inputDescription" type="text area" name="description" id="inputDescription"/>
+                <div className="container">
+                    <label htmlFor="description" className="label">Your thoughts</label>
+                    <textarea className="input"
+                              type="text"
+                              name="description"
+                              id="inputDescription"
+                              placeholder="Tell your story..."
+                              autoFocus={true}
+                        //onChange={(e) => setDescription(e.target.value)}
+                        //value={description}
+                    />
                 </div>
+                <button className="writeSubmit" type="submit">
+                    Publish
+                </button>
             </form>
-        </div>
     )
 
 }
