@@ -3,6 +3,7 @@ import NavBar from './components/navbar/NavBar.jsx';
 import Homepage from "./pages/homePage/Homepage.jsx";
 import SinglePostPage from "./pages/singlePostPage/Single.jsx";
 import Write from "./pages/writePage/Write.jsx";
+import Settings from "./pages/settings/Settings.jsx";
 
 function App() {
 
@@ -17,6 +18,9 @@ function App() {
               </Routes>
               <Routes>
                   <Route path="/write" element={<Write />} />
+              </Routes>
+              <Routes>
+                  <Route path="/settings" element={<Settings />} />
               </Routes>
           </Router>
   )
