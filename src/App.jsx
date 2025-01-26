@@ -4,6 +4,7 @@ import Homepage from "./pages/homePage/Homepage.jsx";
 import SinglePostPage from "./pages/singlePostPage/Single.jsx";
 import Write from "./pages/writePage/Write.jsx";
 import Settings from "./pages/settings/Settings.jsx";
+import AdminLogin from "./pages/admin/AdminLogin.jsx";
 
 function App() {
 
@@ -21,6 +22,9 @@ function App() {
               </Routes>
               <Routes>
                   <Route path="/settings" element={<Settings />} />
+              </Routes>
+              <Routes>
+                  <Route path="/admin" element={<AdminLogin />} />
               </Routes>
           </Router>
   )
