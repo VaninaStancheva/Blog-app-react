@@ -8,7 +8,6 @@
     font-size: 20px;
     margin-left: 10%;
     margin-right: 10%;
-
 }
 
 .settingsForm {
@@ -22,6 +21,7 @@
 .setProfilePicture {
     position: relative;
 }
+
 .profileImg {
     width: 90px;
     height: 90px;

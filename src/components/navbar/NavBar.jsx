@@ -1,7 +1,8 @@
 import './navbar.css'
 import {Link} from "react-router-dom";
 
-export default function NavBar (){
+export default function NavBar () {
+    const user = true;
     return (
         <div className="navbar">
             <div className="navLeft">
@@ -15,18 +16,30 @@ export default function NavBar (){
                     </li>
                     <li className="navListItem">ABOUT</li>
                     <li className="navListItem">CONTACT</li>
-                    <li className="navListItem">
-                        <Link to="/write" style={{textDecoration:"none", color:"inherit"}}>WRITE</Link>
-                    </li>
-                    <li className="navListItem">LOGOUT</li>
+                    {
+                        user ? (
+                            <>
+                                <li className="navListItem">
+                                    <Link to="/write" style={{textDecoration: "none", color: "inherit"}}>WRITE</Link>
+                                </li>
+                                <li className="navListItem">LOGOUT</li>
+                            </>
+                        ) : null
+                    }
                 </ul>
             </div>
             <div className="navRight">
-                <Link to="/settings">
-                    <img className='navImg'
-                         src="../../../public/envato-labs-ai-93cd669d-a337-49b7-bae2-16597d5cc558.jpg"
-                         alt="profile-img"/>
-                </Link>
+                {
+                    user ? (
+                        <Link to="/settings">
+                            <img className='navImg'
+                                 src="../../../public/envato-labs-ai-93cd669d-a337-49b7-bae2-16597d5cc558.jpg"
+                                 alt="profile-img"/>
+                        </Link>
+                    ) : <img className='navImg'
+                             src="../../../public/envato-labs-ai-93cd669d-a337-49b7-bae2-16597d5cc558.jpg"
+                             alt="profile-img"/>
+                }
             </div>
         </div>
     )
