@@ -1,0 +1,64 @@
+.settingsTitle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: "Josefin Sans", sans-serif;
+    color: #adcfc8;
+    margin-top: 50px;
+    font-size: 20px;
+    margin-left: 10%;
+    margin-right: 10%;
+
+}
+
+.settingsForm {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 50px;
+}
+
+.setProfilePicture {
+    position: relative;
+}
+.profileImg {
+    width: 90px;
+    height: 90px;
+    border-radius: 20%;
+    object-fit: cover;
+}
+
+.changePhotoIcon{
+    font-size: 24px;
+    position: absolute;
+    top: 55px;
+    margin-left: 0.5%;
+    color: #adcfc8;
+    cursor: pointer;
+}
+
+.update-label {
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.update-input {
+    margin-top: 20px;
+    height: 20px;
+    border: none;
+    border-bottom: 1px solid lightgray;
+}
+
+.submitBtn {
+    margin-top: 20px;
+    align-self: center;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100px;
+    height: 30px;
+    color: white;
+    font-size: 16px;
+    background-color: #be9656;
+}

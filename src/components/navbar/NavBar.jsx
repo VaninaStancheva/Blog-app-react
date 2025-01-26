@@ -22,8 +22,11 @@ export default function NavBar (){
                 </ul>
             </div>
             <div className="navRight">
-                <img className='navImg' src="../../../public/envato-labs-ai-93cd669d-a337-49b7-bae2-16597d5cc558.jpg"
-                     alt="profile-img"/>
+                <Link to="/settings">
+                    <img className='navImg'
+                         src="../../../public/envato-labs-ai-93cd669d-a337-49b7-bae2-16597d5cc558.jpg"
+                         alt="profile-img"/>
+                </Link>
             </div>
         </div>
     )
