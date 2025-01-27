@@ -12,6 +12,9 @@ function App() {
           <Router>
               <NavBar />
               <Routes>
+                  <Route path="/admin" element={<AdminLogin />} />
+              </Routes>
+              <Routes>
                   <Route exact path="/" element={<Homepage />} />
               </Routes>
               <Routes>
@@ -22,9 +25,6 @@ function App() {
               </Routes>
               <Routes>
                   <Route path="/settings" element={<Settings />} />
-              </Routes>
-              <Routes>
-                  <Route path="/admin" element={<AdminLogin />} />
               </Routes>
           </Router>
   )

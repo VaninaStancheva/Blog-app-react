@@ -1,23 +1,27 @@
 import './writePost.css'
-import {useState, useEffect} from 'react'
+import {useState} from "react";
 
 export default function WritePost() {
-//     const [title, setTitle] = useState('');
-//     const [description, setDescription] = useState('');
-//
-//     useEffect(() => {
-//             let postData = {
-//                 title: title,
-//                 description: description,
-//             }
-//             localStorage.setItem('postData', JSON.stringify(postData));
-//             alert('Data recorded successfully.');
-//             window.location.reload();
-//         }, [title, description]);
+    const [title, setTitle] = useState("");
+    const [category, setCategory] = useState("Angular");
+    const [content, setContent] = useState("");
+
+
+    const submit = (e) => {
+        e.preventDefault();
+        const posts = [];
+        let formData = {title, category, content};
+        posts.push(formData);
+        localStorage.setItem('post', JSON.stringify(posts));
+        alert('Post saved to localStorage!');
+        setTitle("");
+        setCategory("Angular");
+        setContent("");
+    };
 
 
     return (
-            <form className="writePostForm">
+            <form onSubmit={submit} className="writePostForm">
                 <div className="container">
                     <label htmlFor="title" className="label" id="titlePost">Title</label>
                     <input className="input" type="text"
@@ -25,8 +29,8 @@ export default function WritePost() {
                            id="inputTitle"
                            placeholder="Title"
                            autoFocus={true}
-                        //onChange={(e) => setTitle(e.target.value)}
-                        //value={title}
+                           value={title}
+                           onChange={(e) => setTitle(e.target.value)}
                     />
                     <label htmlFor="fileInput" >
                         <i className="addPhotoIcon fa-solid fa-camera"></i>
@@ -39,7 +43,13 @@ export default function WritePost() {
                 </div>
                 <div className="container">
                     <label htmlFor="category" className="label">Choose category:</label>
-                    <select name="category" id="selectCategory" className="input" defaultValue="Angular">
+                    <select name="category"
+                            id="selectCategory"
+                            className="input"
+                            defaultValue="Angular"
+                            value={category}
+                            onChange={(e) => setCategory(e.target.value)}
+                    >
                         <option value="Angular">Angular</option>
                         <option value="Javascript">Javascript</option>
                         <option value="CSS">CSS</option>
@@ -53,8 +63,8 @@ export default function WritePost() {
                               id="inputDescription"
                               placeholder="Tell your story..."
                               autoFocus={true}
-                        //onChange={(e) => setDescription(e.target.value)}
-                        //value={description}
+                              value={content}
+                              onChange={(e) => setContent(e.target.value)}
                     />
                 </div>
                 <button className="writeSubmit" type="submit">

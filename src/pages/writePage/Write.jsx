@@ -1,4 +1,3 @@
-import './write.css'
 import WritePost from "../../components/writeNewPost/WritePost.jsx";
 
 export default function Write() {
