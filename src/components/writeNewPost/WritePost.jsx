@@ -1,18 +1,21 @@
 import './writePost.css'
-import {useState} from "react";
+import {useState, useEffect} from "react";
 
 export default function WritePost() {
     const [title, setTitle] = useState("");
     const [category, setCategory] = useState("Angular");
     const [content, setContent] = useState("");
+    const [posts, setPosts] = useState([]);
+
+    useEffect(() => {
+        localStorage.setItem('post', JSON.stringify(posts));
+    }, [posts]);
 
 
     const submit = (e) => {
         e.preventDefault();
-        const posts = [];
-        let formData = {title, category, content};
-        posts.push(formData);
-        localStorage.setItem('post', JSON.stringify(posts));
+        const formData = {title, category, content};
+        setPosts((posts) => posts = [...posts, formData]);
         alert('Post saved to localStorage!');
         setTitle("");
         setCategory("Angular");
