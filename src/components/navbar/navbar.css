@@ -1,12 +1,13 @@
 .navbar {
     width: 100%;
     height: 50px;
-    background-color: cadetblue;
+    background-color: #ffffff;
     position: sticky;
     top: 0;
     display: flex;
     align-items: center;
     font-family: "Josefin Sans", serif;
+    border-bottom: 1px solid #adcfc8;
 }
 
 .navLeft, .navRight {
@@ -20,7 +21,7 @@
 .navIcon {
     font-size: 20px;
     margin-right: 10px;
-    color: bisque;
+    color: #ffffff;
     cursor: pointer;
 }
 
@@ -47,6 +48,7 @@
 
 .searchIcon {
     font-size: 18px;
+    color: #adcfc8;
 }
 
 .searchInput {
@@ -54,8 +56,8 @@
     height: 20px;
     width: 11rem;
     border-width: 1px;
-    border-color: antiquewhite;
-    background-color: antiquewhite;
+    border-color: #adcfc8;
+    background-color: #ffffff;
     font-family: "Josefin Sans", serif;
     text-indent: .5rem;
 }

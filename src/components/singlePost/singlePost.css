@@ -3,11 +3,11 @@
 }
 
 .singlePost-container {
-    padding: 20px;
-    padding-right: 0;
+    padding: 40px;
 }
 
 .singlePostImg {
+    margin-left: 20px;
 
 }
 
@@ -15,7 +15,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 10px;
+    margin: 50px 20px 10px 20px;
     font-size: 28px;
     font-family: "Josefin Sans", sans-serif;
     color: #444444;
@@ -38,8 +38,8 @@
 }
 
 .singlePostInfo {
-    margin-left: 10px;
-    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-bottom: 50px;
     font-size: 16px;
     color: #be9656;
     font-family: "Varela Round", sans-serif;
