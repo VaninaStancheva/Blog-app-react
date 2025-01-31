@@ -1,8 +1,8 @@
 .post-container {
-    width: 385px;
-    margin: 40px 25px 40px 25px;
+    width: 30%;
     display: flex;
     flex-direction: column;
+    padding: 2%
 }
 
 .postTitle {
