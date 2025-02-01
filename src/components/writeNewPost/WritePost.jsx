@@ -1,5 +1,5 @@
 import './writePost.css'
-import {useState, useEffect} from "react";
+import {useState} from "react";
 
 export default function WritePost() {
     const [title, setTitle] = useState("");
@@ -7,14 +7,11 @@ export default function WritePost() {
     const [content, setContent] = useState("");
     const [posts, setPosts] = useState([]);
 
-    useEffect(() => {
-        localStorage.setItem('post', JSON.stringify(posts));
-    }, [posts]);
-
-
     const submit = (e) => {
         e.preventDefault();
-        const formData = {title, category, content};
+        const formData = {id: crypto.randomUUID(), title, category, content};
+        const postsForStorage = [...posts, formData];
+        localStorage.setItem('post', JSON.stringify(postsForStorage));
         setPosts((posts) => posts = [...posts, formData]);
         alert('Post saved to localStorage!');
         setTitle("");

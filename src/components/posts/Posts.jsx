@@ -2,12 +2,13 @@ import Post from "../post/Post.jsx";
 import './posts.css'
 
 export default function Posts() {
+    const getPosts = JSON.parse(localStorage.getItem("post"));
+    console.log(Array.isArray(getPosts));
     return (
-        <div className="posts">
-            <Post />
-            <Post />
-            <Post />
-            <Post />
-        </div>
+        <ul className="posts">
+            {getPosts.map((post) => (
+                <li key={post.id}><Post title={post.title} content={post.content} /></li>
+            ))}
+        </ul>
     )
 }
