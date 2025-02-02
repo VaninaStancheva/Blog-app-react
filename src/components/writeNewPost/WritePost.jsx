@@ -9,7 +9,7 @@ export default function WritePost() {
 
     const submit = (e) => {
         e.preventDefault();
-        const formData = {id: crypto.randomUUID(), title, category, content};
+        const formData = {id: crypto.randomUUID(), title, date: new Date(Date.now()).toLocaleDateString("en-GB"), category, content};
         const postsForStorage = [...posts, formData];
         localStorage.setItem('post', JSON.stringify(postsForStorage));
         setPosts((posts) => posts = [...posts, formData]);
