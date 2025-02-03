@@ -12,29 +12,85 @@
 .container {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
 
+.textarea-container {
+    align-items: flex-start;
+}
+
+.writeImg {
+    width: 50vw;
+    height: 250px;
+    border-radius: 10px;
+    object-fit: cover;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.container-icon {
+    position: absolute;
+    top: 310px;
+    left: 72%;
+}
+
+.addPhotoIcon{
+    font-size: 18px;
+    width: 22px;
+    height: 22px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 50%;
+    margin-left: 10px;
+    color: white;
+    background-color: lightcoral;
+    cursor: pointer;
+}
+
+.addPhotoIcon:hover{
+    background-color: rgba(243, 134, 134, 0.76);
 }
 
 .label {
     width: 30%;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 18px;
 }
 
 .input {
     width: 70%;
+    height: 25px;
+    border: none;
+    border-bottom: 1px solid #4f5c5c;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 18px;
+}
+
+.textarea {
+    height: 200px;
 }
 
 .writeSubmit {
     font-family: "Josefin Sans", sans-serif;
     color: white;
-    background-color: #be9656;
+    background-color: #cc9455;
     border-radius: 10px;
     border: none;
     cursor: pointer;
-    padding: 8px;
-    font-size: 16px;
+    padding: 10px;
+    font-size: 18px;
     width: 10%;
+    position: absolute;
+    top: 700px;
+    right: 25%;
 }
 
+.writeSubmit:hover {
+    background-color: rgba(228, 174, 114, 0.78);
+}
 .flex-row {
     display: flex;
     justify-content: space-between;
