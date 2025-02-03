@@ -7,9 +7,11 @@ export default function Posts() {
     return (
         <ul className="posts">
             {getPosts.map((post) => (
-                <Link key={post.id} to={`/posts/${post.id}`}>
-                    <li><Post id={post.id} title={post.title} category={post.category} date={post.date} content={post.content}/></li>
-                </Link>
+                <li key={post.id}>
+                    <Link to={`/posts/${post.id}`} style={{textDecoration:"none", color:"inherit"}}>
+                        <Post id={post.id} title={post.title} category={post.category} date={post.date} content={post.content}/>
+                    </Link>
+                </li>
             ))}
         </ul>
     )

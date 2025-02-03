@@ -22,8 +22,23 @@ export default function WritePost() {
 
     return (
             <form onSubmit={submit} className="writePostForm">
+                <img
+                    className="writeImg"
+                    src="../../../public/000.jpg"
+                    alt=""
+                />
+                <div className="container-icon">
+                    <label htmlFor="fileInput">
+                        <i className="addPhotoIcon fa-solid fa-camera"></i>
+                    </label>
+                    <input id="fileInput"
+                           type="file"
+                           style={{display: "none"}}
+                           className="input"
+                    />
+                </div>
                 <div className="container">
-                    <label htmlFor="title" className="label" id="titlePost">Title</label>
+                    <label htmlFor="title" className="label" id="titlePost">Title:</label>
                     <input className="input" type="text"
                            name="title"
                            id="inputTitle"
@@ -31,14 +46,6 @@ export default function WritePost() {
                            autoFocus={true}
                            value={title}
                            onChange={(e) => setTitle(e.target.value)}
-                    />
-                    <label htmlFor="fileInput" >
-                        <i className="addPhotoIcon fa-solid fa-camera"></i>
-                    </label>
-                    <input id="fileInput"
-                           type="file"
-                           style={{display: "none"}}
-                           className="input"
                     />
                 </div>
                 <div className="container">
@@ -55,9 +62,9 @@ export default function WritePost() {
                         <option value="CSS">CSS</option>
                     </select>
                 </div>
-                <div className="container">
-                    <label htmlFor="description" className="label">Your thoughts</label>
-                    <textarea className="input"
+                <div className="container textarea-container">
+                    <label htmlFor="description" className="label">Your thoughts:</label>
+                    <textarea className="input textarea"
                               type="text"
                               name="description"
                               id="inputDescription"

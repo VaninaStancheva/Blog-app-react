@@ -1,6 +1,6 @@
 .posts {
-    margin-top: 5rem;
     display: flex;
-    justify-content: center;
-    padding: 2rem;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    list-style: none;
 }
