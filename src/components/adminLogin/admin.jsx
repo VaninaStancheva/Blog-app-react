@@ -1,12 +1,11 @@
 import './adminLogin.css'
 import {useState, useEffect} from "react";
-import {Link, Router, Route} from "react-router-dom";
-import Homepage from "../../pages/homePage/Homepage.jsx";
+import {useNavigate} from "react-router-dom";
 
 export default function AdminLoginComponent() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const [user, setUser] = useState(false);
+    const navigate = useNavigate();
 
 
     useEffect(() => {
@@ -22,14 +21,9 @@ export default function AdminLoginComponent() {
         e.preventDefault();
         const getLoginData = JSON.parse(localStorage.getItem("adminData"));
         if (getLoginData.username === username && getLoginData.password === password) {
-            setUser((user) => user);
-            return (
-                <Router>
-                    <Route exact path="/" element={<Homepage/>}/>
-                </Router>
-            )
+            navigate("/");
         } else {
-            setUser((user) => !user);
+            alert("Invalid username or password!");
         }
     }
 
@@ -45,6 +39,7 @@ export default function AdminLoginComponent() {
                        id="inputUsername"
                        placeholder="Username"
                        onChange={(e) => setUsername(e.target.value)}
+                       value={username}
                 />
                 <label htmlFor="password" className="loginLabel">Password</label>
                 <input
@@ -54,12 +49,9 @@ export default function AdminLoginComponent() {
                     id="inputPassword"
                     placeholder="Password"
                     onChange={(e) => setPassword(e.target.value)}
+                    value={password}
                 />
-                {
-                    user ? (<Link to="/" style={{textDecoration: "none", color: "inherit"}}>
-                        <button type="submit" className="loginButton">Login</button>
-                    </Link>) : alert("Wrong Username or password!")
-                }
+                <button type="submit" className="loginButton">Login</button>
             </form>
         </div>
     )
