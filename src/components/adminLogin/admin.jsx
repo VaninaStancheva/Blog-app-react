@@ -13,14 +13,20 @@ export default function AdminLoginComponent() {
             username: 'Klasnakov',
             password: '1234567890'
         };
-        localStorage.setItem('adminData', JSON.stringify(adminData));
-    }, []);
+        if (localStorage.getItem("isLoggedIn") === "true") {
+            navigate("/");
+        }
+        if (!localStorage.getItem("adminData")) {
+            localStorage.setItem('adminData', JSON.stringify(adminData));
+        }
+    }, [navigate]);
 
 
     const submitLogin = (e) => {
         e.preventDefault();
         const getLoginData = JSON.parse(localStorage.getItem("adminData"));
         if (getLoginData.username === username && getLoginData.password === password) {
+            localStorage.setItem("isLoggedIn", "true");
             navigate("/");
         } else {
             alert("Invalid username or password!");

@@ -13,8 +13,6 @@ function App() {
               <NavBar />
               <Routes>
                   <Route path="/admin" element={<AdminLogin />} />
-              </Routes>
-              <Routes>
                   <Route exact path="/" element={<Homepage />} />
               </Routes>
               <Routes>

@@ -1,8 +1,16 @@
 import './navbar.css'
 import {Link} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 export default function NavBar () {
-    const user = true;
+    let isLoggedIn = localStorage.getItem("isLoggedIn");
+    const navigate = useNavigate();
+
+    const handleLogout = () => {
+        localStorage.removeItem("isLoggedIn"); 
+        navigate("/");
+    };
+
     return (
         <div className="navbar">
             <div className="navLeft">
@@ -17,12 +25,12 @@ export default function NavBar () {
                     <li className="navListItem">ABOUT</li>
                     <li className="navListItem">CONTACT</li>
                     {
-                        user ? (
+                        isLoggedIn ? (
                             <>
                                 <li className="navListItem">
                                     <Link to="/write" style={{textDecoration: "none", color: "inherit"}}>WRITE</Link>
                                 </li>
-                                <li className="navListItem">LOGOUT</li>
+                                <li className="navListItem" onClick={handleLogout}>LOGOUT</li>
                             </>
                         ) : null
                     }
@@ -30,7 +38,7 @@ export default function NavBar () {
             </div>
             <div className="navRight">
                 {
-                    user ? (
+                    isLoggedIn ? (
                         <Link to="/settings">
                             <img className='navImg'
                                  src="../../../public/envato-labs-ai-93cd669d-a337-49b7-bae2-16597d5cc558.jpg"
