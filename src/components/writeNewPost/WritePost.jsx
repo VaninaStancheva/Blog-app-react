@@ -69,7 +69,6 @@ export default function WritePost() {
                               name="description"
                               id="inputDescription"
                               placeholder="Tell your story..."
-                              autoFocus={true}
                               value={content}
                               onChange={(e) => setContent(e.target.value)}
                     />
