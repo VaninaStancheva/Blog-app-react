@@ -7,7 +7,7 @@ export default function NavBar () {
     const navigate = useNavigate();
 
     const handleLogout = () => {
-        localStorage.removeItem("isLoggedIn"); 
+        localStorage.removeItem("isLoggedIn");
         navigate("/");
     };
 
