@@ -3,7 +3,7 @@ import {useState} from "react";
 
 export default function WritePost() {
     const [title, setTitle] = useState("");
-    const [category, setCategory] = useState("Angular");
+    const [category, setCategory] = useState("");
     const [content, setContent] = useState("");
     const [newCategory, setNewCategory] = useState("");
     const [posts, setPosts] = useState([]);
@@ -17,13 +17,12 @@ export default function WritePost() {
         setPosts((posts) => posts = [...posts, formData]);
         alert('Post saved to localStorage!');
         setTitle("");
-        setCategory("Angular");
+        setCategory("");
         setContent("");
     };
 
     const handleAddCategory = (e) => {
         e.preventDefault();
-        document.getElementById("newCategory").style.display = "block";
         const categoryData = newCategory ;
         const categoryForStorage = [...categories, categoryData];
         localStorage.setItem("category", JSON.stringify(categoryForStorage));
@@ -63,18 +62,15 @@ export default function WritePost() {
                        onChange={(e) => setTitle(e.target.value)}
                 />
             </div>
-            <div id="newCategory" className="container" style={{display: "none"}}>
-                <label htmlFor="new-category" className="label" id="newCategory">New category:</label>
+            <div className="container">
+                <label htmlFor="category" className="label">Choose category:</label>
                 <input className="input" type="text"
                        name="new-category"
                        id="inputNewCategory"
-                       placeholder=""
+                       placeholder="Select or Add Category"
                        value={newCategory}
                        onChange={(e) => setNewCategory(e.target.value)}
                 />
-            </div>
-            <div className="container">
-                <label htmlFor="category" className="label">Choose category:</label>
                 <select name="category"
                         id="selectCategory"
                         className="input"
@@ -92,7 +88,9 @@ export default function WritePost() {
                             )) : null
                     }
                 </select>
-                <button className="addCategoryBtn" onClick={handleAddCategory}>Add</button>
+                <button className="addCategoryBtn" onClick={handleAddCategory}>
+                    <i className="addCategoryIcon fa-solid fa-plus"></i>
+                </button>
             </div>
             <div className="container textarea-container">
                 <label htmlFor="description" className="label">Your thoughts:</label>
